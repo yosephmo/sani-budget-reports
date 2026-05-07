@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>산이네 가계부 분석 2026 Q1</title>
+<link rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:'Pretendard Variable',sans-serif;background:#f8fafb;color:#1a1a2e;padding:24px}
+.wrap{max-width:800px;margin:0 auto}
+.card{background:#fff;border-radius:12px;box-shadow:0 2px 8px rgba(0,0,0,.07);padding:20px;margin-bottom:16px}
+h1{font-size:22px;font-weight:700}
+h2{font-size:15px;font-weight:700;margin-bottom:14px;color:#1a1a2e}
+.sub{font-size:13px;color:#666;margin-top:4px}
+.big{font-size:36px;font-weight:800;color:#4a90d9;margin-top:8px}
+.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.kpi{background:#f8fafb;border-radius:8px;padding:14px;text-align:center}
+.kpi .val{font-size:20px;font-weight:700;margin-top:4px}
+.kpi .lbl{font-size:11px;color:#888}
+.red{color:#e74c3c}.green{color:#27ae60}.blue{color:#4a90d9}.orange{color:#e67e22}
+.ins{display:flex;gap:10px;align-items:flex-start;padding:10px 0;border-bottom:1px solid #f0f0f0}
+.ins:last-child{border-bottom:none}
+.ins .ico{font-size:20px;flex-shrink:0}
+.ins .txt{font-size:13px;line-height:1.6}
+.ins .txt strong{font-size:14px;display:block;margin-bottom:2px}
+.bar-row{display:flex;align-items:center;gap:8px;margin:5px 0}
+.bar-row .lbl{width:110px;font-size:12px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar-row .track{flex:1;background:#eee;border-radius:4px;height:18px;overflow:hidden}
+.bar-row .fill{height:100%;border-radius:4px}
+.bar-row .amt{width:100px;text-align:right;font-size:12px}
+.badge{display:inline-block;font-size:11px;padding:2px 7px;border-radius:10px;font-weight:600}
+.badge-red{background:#fdecea;color:#e74c3c}
+.badge-orange{background:#fef3e2;color:#e67e22}
+.badge-blue{background:#e8f2fc;color:#4a90d9}
+.action{border-left:4px solid #4a90d9;padding:12px 16px;margin-bottom:10px;background:#f8fafb;border-radius:0 8px 8px 0}
+.action.warn{border-color:#e74c3c}
+.action.ok{border-color:#27ae60}
+.action h3{font-size:14px;font-weight:700;margin-bottom:4px}
+.action .basis{font-size:12px;color:#555;margin-bottom:3px}
+.action .effect{font-size:12px;color:#27ae60;font-weight:600}
+footer{text-align:center;font-size:12px;color:#aaa;margin-top:8px;padding-bottom:16px}
+.month-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:10px}
+.mo{background:#f8fafb;border-radius:8px;padding:10px;text-align:center}
+.mo .m{font-size:11px;color:#888}
+.mo .v{font-size:14px;font-weight:700;margin-top:2px}
+.mo .d{font-size:11px;margin-top:1px}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<!-- 1. Header -->
+<div class="card">
+  <div style="display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:8px">
+    <div>
+      <h1>🏠 산이네 가계부 분석</h1>
+      <div class="sub">2026년 1월 ~ 4월 · 월 예산 2,480,000원</div>
+      <div class="big">10,052,093원</div>
+      <div class="sub">4개월 누적 지출</div>
+    </div>
+    <div style="text-align:right">
+      <div class="badge badge-red" style="font-size:13px;padding:6px 12px">예산 초과 2개월</div>
+      <div style="font-size:12px;color:#888;margin-top:6px">월 평균 지출 2,513,023원</div>
+      <div style="font-size:12px;color:#e74c3c;font-weight:600">예산 대비 +33,023원/월</div>
+    </div>
+  </div>
+</div>
+
+<!-- 2. Executive Summary -->
+<div class="card">
+  <h2>Executive Summary</h2>
+  <div class="ins">
+    <div class="ico">🚨</div>
+    <div class="txt"><strong>4월 식재료 폭증이 핵심 경보</strong>평균 315,037원이던 식재료가 4월 619,227원으로 <span class="red"><strong>+97% 급등</strong></span>. 단일 이상치가 4월 예산 초과(-225,637원)의 주범. 명절·대량구매 여부 확인 필수.</div>
+  </div>
+  <div class="ins">
+    <div class="ico">📊</div>
+    <div class="txt"><strong>'산이' 항목이 변동성·규모 모두 위험 구간</strong>변동계수 0.34, 4개월 누적 1,769,500원으로 식재료와 함께 최대 변동 카테고리. 2월(621,568원)·4월(551,510원) 고지출 패턴이 격월 반복 — 구조적 지출인지 점검 필요.</div>
+  </div>
+  <div class="ins">
+    <div class="ico">💡</div>
+    <div class="txt"><strong>고정비 비중 37.5%로 통제 가능 구간</strong>버팀목 대출 이자(750,000원 고정) + 관리비(평균 203,858원) = 월 953,858원. 예산의 38.5%가 완전 고정. 나머지 61.5% 변동비에서 절감 여지 존재.</div>
+  </div>
+</div>
+
+<!-- 3. 재무 건전성 -->
+<div class="card">
+  <h2>재무 건전성 지표</h2>
+  <div class="grid4">
+    <div class="kpi"><div class="lbl">월 평균 지출</div><div class="val blue">2,513,023<span style="font-size:12px">원</span></div></div>
+    <div class="kpi"><div class="lbl">예산 초과율</div><div class="val red">+1.3%</div></div>
+    <div class="kpi"><div class="lbl">고정비 비중</div><div class="val orange">38.5%</div></div>
+    <div class="kpi"><div class="lbl">흑자 월 수</div><div class="val green">2 / 4</div></div>
+  </div>
+  <div style="margin-top:16px">
+    <div style="font-size:12px;color:#888;margin-bottom:8px">월별 예산 사용률 (예산 2,480,000원 기준)</div>
+    <div class="month-grid">
+      <div class="mo"><div class="m">1월</div><div class="v blue">2,357,352원</div><div class="d green">▼ 122,648원</div></div>
+      <div class="mo"><div class="m">2월</div><div class="v blue">2,263,928원</div><div class="d green">▼ 216,072원</div></div>
+      <div class="mo"><div class="m">3월</div><div class="v red">2,725,176원</div><div class="d red">▲ 245,176원</div></div>
+      <div class="mo"><div class="m">4월</div><div class="v red">2,705,637원</div><div class="d red">▲ 225,637원</div></div>
+    </div>
+  </div>
+  <div style="margin-top:16px">
+    <div style="font-size:12px;color:#888;margin-bottom:8px">카테고리별 누적 지출 (전체 10,052,093원 대비)</div>
+    <div class="bar-row"><span class="lbl">버팀목 대출이자</span><div class="track"><div class="fill" style="width:29.8%;background:#95a5a6"></div></div><span class="amt">3,000,000원</span></div>
+    <div class="bar-row"><span class="lbl">산이</span><div class="track"><div class="fill" style="width:17.6%;background:#e74c3c"></div></div><span class="amt">1,769,500원</span></div>
+    <div class="bar-row"><span class="lbl">식재료</span><div class="track"><div class="fill" style="width:15.6%;background:#e67e22"></div></div><span class="amt">1,564,337원</span></div>
+    <div class="bar-row"><span class="lbl">외식</span><div class="track"><div class="fill" style="width:10.1%;background:#4a90d9"></div></div><span class="amt">1,018,280원</span></div>
+    <div class="bar-row"><span class="lbl">관리비</span><div class="track"><div class="fill" style="width:8.1%;background:#95a5a6"></div></div><span class="amt">815,430원</span></div>
+    <div class="bar-row"><span class="lbl">살림</span><div class="track"><div class="fill" style="width:6.8%;background:#9b59b6"></div></div><span class="amt">686,590원</span></div>
+    <div class="bar-row"><span class="lbl">기호식품</span><div class="track"><div class="fill" style="width:5.4%;background:#4a90d9"></div></div><span class="amt">544,010원</span></div>
+    <div class="bar-row"><span class="lbl">여가/문화/쇼핑</span><div class="track"><div class="fill" style="width:2.8%;background:#1abc9c"></div></div><span class="amt">278,140원</span></div>
+    <div class="bar-row"><span class="lbl">교통/차량</span><div class="track"><div class="fill" style="width:2.4%;background:#3498db"></div></div><span class="amt">244,396원</span></div>
+    <div class="bar-row"><span class="lbl">기타</span><div class="track"><div class="fill" style="width:1.3%;background:#bdc3c7"></div></div><span class="amt">131,410원</span></div>
+  </div>
+</div>
+
+<!-- 4. 변동성 + 이상치 -->
+<div class="card">
+  <h2>변동성 분석 + 이상치 탐지</h2>
+  <div style="font-size:12px;color:#888;margin-bottom:10px">변동계수(CV) 높은 순 — CV &gt; 0.5 이상은 통제 필요 구간</div>
+
+  <div class="bar-row">
+    <span class="lbl">여가/문화/쇼핑</span>
+    <div class="track"><div class="fill" style="width:100%;background:#e74c3c"></div></div>
+    <span class="amt"><span class="badge badge-red">CV 1.17</span></span>
+  </div>
+  <div class="bar-row">
+    <span class="lbl">기타</span>
+    <div class="track"><div class="fill" style="width:86%;background:#e74c3c"></div></div>
+    <span class="amt"><span class="badge badge-red">CV 1.01</span></span>
+  </div>
+  <div class="bar-row">
+    <span class="lbl">교통/차량</span>
+    <div class="track"><div class="fill" style="width:72%;background:#e67e22"></div></div>
+    <span class="amt"><span class="badge badge-orange">CV 0.84</span></span>
+  </div>
+  <div class="bar-row">
+    <span class="lbl">살림</span>
+    <div class="track"><div class="fill" style="width:62%;background:#e67e22"></div></div>
+    <span class="amt"><span class="badge badge-orange">CV 0.73</span></span>
+  </div>
+  <div class="bar-row">
+    <span class="lbl">식재료</span>
+    <div class="track"><div class="fill" style="width:29%;background:#4a90d9"></div></div>
+    <span class="amt"><span class="badge badge-blue">CV 0.34</span></span>
+  </div>
+  <div class="bar-row">
+    <span class="lbl">산이</span>
+    <div class="track"><div class="fill" style="width:29%;background:#4a90d9"></div></div>
+    <span class="amt"><span class="badge badge-blue">CV 0.34</span></span>
+  </div>
+  <div class="bar-row">
+    <span class="lbl">기호식품</span>
+    <div class="track"><div class="fill" style="width:23%;background:#4a90d9"></div></div>
+    <span class="amt"><span class="badge badge-blue">CV 0.27</span></span>
+  </div>
+
+  <div style="margin-top:18px;border-top:1px solid #f0f0f0;padding-top:14px">
+    <div style="font-size:13px;font-weight:700;margin-bottom:10px">🔍 이상치 탐지 (평균 대비 +50% 초과)</div>
+
+    <div style="background:#fdecea;border-radius:8px;padding:12px;margin-bottom:8px">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <span style="font-size:13px;font-weight:700">🥦 식재료 · 4월</span>
+        <span class="badge badge-red">+97% 이상치</span>
+      </div>
+      <div style="font-size:12px;color:#555;margin-top:5px">평균 315,037원 → 4월 <strong>619,227원</strong> (+304,190원)<br>가설: 명절 선물세트 구매 또는 대형마트 대량 구매 이벤트. 영수증 확인 후 '살림' 또는 별도 항목 분리 필요.</div>
+    </div>
+
+    <div style="background:#fef3e2;border-radius:8px;padding:12px;margin-bottom:8px">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <span style="font-size:13px;font-weight:700">👤 산이 · 2월·4월</span>
+        <span class="badge badge-orange">격월 고지출 패턴</span>
+      </div>
+      <div style="font-size:12px;color:#555;margin-top:5px">2월 621,568원 / 4월 551,510원 vs 1월 337,502원 / 3월 258,920원<br>가설: 짝수 달 정기 지출(보험료·구독·의류 시즌) 집중. 항목 세분화 없이는 통제 불가.</div>
+    </div>
+
+    <div style="background:#fef3e2;border-radius:8px;padding:12px;margin-bottom:8px">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <span style="font-size:13px;font-weight:700">🛒 살림 · 3월</span>
+        <span class="badge badge-orange">+106% 이상치</span>
+      </div>
+      <div style="font-size:12px;color:#555;margin-top:5px">평균 171,648원 → 3월 <strong>353,740원</strong> (+182,092원). 2월은 22,000원으로 최저.<br>가설: 봄맞이 대청소·가전 소모품 일괄 구매. 2월 절약 후 3월 반동 소비 패턴.</div>
+    </div>
+
+    <div style="background:#f0f7ff;border-radius:8px;padding:12px">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <span style="font-size:13px;font-weight:700">🎭 여가/문화/쇼핑 · 3월</span>
+        <span class="badge badge-blue">0원→198,140원</span>
+      </div>
+      <div style="font-size:12px;color:#555;margin-top:5px">1월·4월 0원, 3월에만 198,140원 집중. CV 1.17로 전체 최고.<br>가설: 공연·여행·시즌 쇼핑 등 비정기 지출. 월 예산 50,000원 선 설정으로 평탄화 가능.</div>
+    </div>
+  </div>
+</div>
+
+<!-- 5. 액션 아이템 -->
+<div class="card">
+  <h2>액션 아이템 TOP 3</h2>
+
+  <div class="action warn">
+    <h3>① '산이' 항목 즉시 세분화하라</h3>
+    <div class="basis">📌 근거: 4개월 누적 1,769,500원(월평균 442,375원)인데 내용 불명. 변동계수 0.34로 식재료와 동일 수준이나 규모는 더 큼. 짝수 달 고지출 패턴이 구조적인지 우발적인지 판단 불가.</div>
+    <div class="effect">💰 기대효과: 세분화만으로 월 50,000~100,000원 절감 가능성. 불필요 구독·보험 발견 시 추가 절감.</div>
+  </div>
+
+  <div class="action warn">
+    <h3>② 식재료 월 예산 350,000원 상한 설정 + 4월 원인 규명</h3>
+    <div class="basis">📌 근거: 1~3월 평균 315,037원이었으나 4월 619,227원으로 2배 폭등. 이 단일 이상치가 4월 예산 초과(-225,637원)의 136%를 설명. 반복 시 연간 +1,248,000원 초과 발생.</div>
+    <div class="effect">💰 기대효과: 4월 수준이 재발 방지 시 월 304,000원 절감. 연간 최대 3,648,000원 방어.</div>
+  </div>
+
+  <div class="action ok">
+    <h3>③ 여가/교통 통합 월 예산 100,000원 봉투 운영</h3>
+    <div class="basis">📌 근거: 여가(CV 1.17)·교통(CV 0.84) 모두 0원 ↔ 고지출 극단 패턴. 두 항목 합산 월평균 130,634원이나 변동폭이 커 예측 불가. 봉투 예산제로 평탄화 가능.</div>
+    <div class="effect">💰 기대효과: 월 30,000원 절감 + 심리적 지출 통제 효과. 3월처럼 334,296원 집중 방지.</div>
+  </div>
+</div>
+
+<!-- Footer -->
+<footer>
+  산이네 부부의 재무 구조는 고정비가 안정적이나, '산이' 항목 불투명성과 식재료 이상치가 예산 방어선을 무너뜨리는 핵심 변수 — 세분화와 상한 설정이 최우선 과제입니다.<br>
+  <span style="color:#ccc">Generated by AI Financial Consultant · 2026.04 기준</span>
+</footer>
+
+</div>
+</body>
+</html>
